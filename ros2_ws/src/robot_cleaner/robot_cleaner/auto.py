@@ -135,8 +135,8 @@ class RoboCleaner(Node):
     def menu (self):
         print('|----------------------------------|')
         print('| 1: Move')
-       # print('| 2: Rotate')
-       # print('| 3: Go to Goal')
+        print('| 2: Rotate')
+        print('| 3: Go to Goal')
         print('| Q: Quit')
         print('|----------------------------------|')
         choice = input("Enter your choice: ")
@@ -168,7 +168,7 @@ class RoboCleaner(Node):
                     x = float(input("x: "))
                     y = float(input("y: "))
                     theta = float(input("theta: "))
-                    self.go_to_goal(RobotPose(x, y, theta), distance_error_tolerance=0.5)
+                    self.go_to_goal(RobotPose(x, y, theta), distance_error_tolerance=0.00001)
                 elif choice == 'q':
                     print("Quit.....")
                     return 0

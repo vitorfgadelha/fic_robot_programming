@@ -1,0 +1,12 @@
+launch:
+  - node:
+      pkg: "py_pubsub"
+      exec: "talker_1"
+      name: "talker"
+      output: "screen"
+
+  - node:
+      pkg: "py_pubsub"
+      exec: "listener"
+      name: "listener"
+      output: "screen"

@@ -1,3 +1,5 @@
+import os
+from glob import glob
 from setuptools import find_packages, setup
 
 package_name = 'py_pubsub'
@@ -10,6 +12,7 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        (os.path.join('share', package_name), glob('launch/*launch.[pxy][yma]*')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -22,7 +25,9 @@ setup(
         'console_scripts': [
             'talker_1 = py_pubsub.publisher_string:main',
             'listener = py_pubsub.subscriber:main',
-            'talker_2 = py_pubsub.publisher_int:main'
+            'talker_2 = py_pubsub.publisher_int:main',
+            'id_check = py_pubsub.publish_id:main',
+            'go = py_pubsub.test:main',
         ],
     },
 )
